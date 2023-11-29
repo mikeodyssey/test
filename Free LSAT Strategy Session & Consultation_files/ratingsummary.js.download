@@ -1,0 +1,307 @@
+
+
+    Array.prototype.find = Array.prototype.find || function (callback) {
+        if (typeof callback !== "function") {
+            throw new TypeError("callback must be a function");
+        }
+        var list = Object(this);
+        // Makes sures is always has an positive integer as length.
+        var length = list.length >>> 0;
+        var thisArg = arguments[1];
+        for (var i = 0; i < length; i++) {
+            var element = list[i];
+            if (callback.call(thisArg, element, i, list)) {
+                return element;
+            }
+        }
+    };
+
+    (function (w, d) {
+
+        var reviewLink = "https://www.trustistreviewer.com/survey/xzNAw6Z43Ey2wh_O4gJP1g.html";
+        var businessKey = "y8ozc1dk";
+        var locationKey = "";
+        var tenantKey = "";
+
+        var templateDefs = [
+            { name: "widget", template: "widget", content: "summary", css: "", reviewLink: true, starsWidth: 65 },
+            { name: "big", template: "big", content: "summaryBig", css: "https://wassets.trustist.com/assets/css/reviewer_big.css", reviewLink: true, starsWidth: 150 },
+            { name: "wide", template: "wide", content: "summaryBig", css: "https://wassets.trustist.com/assets/css/reviewer_wide.css", reviewLink: true, starsWidth: 150 },
+            { name: "small", template: "small", content: "summary", css: "https://wassets.trustist.com/assets/css/reviewer_small.css", reviewLink: true, starsWidth: 65 },
+            { name: "starbar", template: "starbar20", content: "", css: "", reviewLink: false, starsWidth: 65 },
+            { name: "starbar10", template: "starbar10", content: "", css: "", reviewLink: false, starsWidth: 65 },
+            { name: "starbar12", template: "starbar12", content: "", css: "", reviewLink: false, starsWidth: 65 },
+            { name: "starbar20", template: "starbar20", content: "", css: "", reviewLink: false, starsWidth: 65 },
+            { name: "starbar25", template: "starbar25", content: "", css: "", reviewLink: false, starsWidth: 65 },
+            { name: "starbar50", template: "starbar50", content: "", css: "", reviewLink: false, starsWidth: 65 },
+            { name: "starbarwhite10", template: "starbarwhite10", content: "", css: "", reviewLink: false, starsWidth: 65 },
+            { name: "starbarwhite12", template: "starbarwhite12", content: "", css: "", reviewLink: false, starsWidth: 65 },
+            { name: "starbarwhite20", template: "starbarwhite20", content: "", css: "", reviewLink: false, starsWidth: 65 },
+            { name: "starbarwhite25", template: "starbarwhite25", content: "", css: "", reviewLink: false, starsWidth: 65 },
+            { name: "starbarwhite50", template: "starbarwhite50", content: "", css: "", reviewLink: false, starsWidth: 65 },
+        ];
+
+        var logo = '<div class="ts-widgetLogo" style="{{logoStyle}}"></div>';
+
+        var templates = {
+            advert: '<div class="ts-widgetAdvert">You\'re all set!<br /> Visit <a href="https://www.trustistreviewer.com" target="{{target}}">Trustist Reviewer</a> <br />to activate your account</div > ',
+            widget: '<div class="cleanslate ts-widget"><div class="ts-widgetBody" style="{{widgetStyle}}"><!--logo--><div class="ts-widgetContent">{{content}}</div></div><!--reviewLink--></div>',
+            big: '<div class="cleanslate ts-widget ts-big"><div class="ts-widgetBody" style="{{widgetStyle}}"><!--logo--><div class="ts-widgetContent">{{content}}</div><a class="ts-widgetLinkReviewer" href="{{url}}" rel="{{rel}}" target="{{target}}"><span class="ts-stars"><div style="width:{{starsPercent}}px !important; overflow: hidden !important;"><span></span></div></span></a></div><!--reviewLink--></div>',
+            wide: '<div class="cleanslate ts-widget ts-wide"><div class="ts-widgetBody" style="{{widgetStyle}}"><!--logo--><div class="ts-widgetContent">{{content}}<a class="ts-widgetLinkReviewer" href="{{url}}" rel="{{rel}}" target="{{target}}"><span class="ts-stars"><div style="width:{{starsPercent}}px !important; overflow: hidden !important;"><span></span></div></span></a></div><!--reviewLink--></div></div>',
+            small: '<div class="cleanslate ts-widget ts-small"><div class="ts-widgetBody" style="{{widgetStyle}}"><!--logo--><div class="ts-widgetContent">{{content}}</div></div><!--reviewLink--></div>',
+            starbar: '<div class="ts-starbar"><span class="ts-stars" aria-label="Rated {{reviewScore}} out of 5"><div style="width:{{starsPercent}}px !important; overflow: hidden !important;"><span></span></div></span>&nbsp;<a class="ts-widgetLink" href="{{url}}" rel="{{rel}}" target="{{target}}" style="{{captionStyle}}">{{caption}}</a></div><!--reviewLink--></div>',
+            starbar10: '<div class="ts-starbar"><span class="ts-starlogo" style="width: 30px !important; height: 10px !important; background: url(https://wassets.trustist.com/assets/img/TrustedBy.svg) no-repeat !important; overflow: hidden !important;"></span><span class="ts-stars" aria-label="Rated {{reviewScore}} out of 5"><div style="width:{{starsPercent}}px !important; overflow: hidden !important;"><span></span></div></span>&nbsp;<a class="ts-widgetLink" href="{{url}}" rel="{{rel}}" target="{{target}}" style="{{captionStyle}}">{{caption}}</a></div><!--reviewLink--></div>',
+            starbar12: '<div class="ts-starbar"><span class="ts-starlogo" style="width: 35px !important; height: 12px !important; background: url(https://wassets.trustist.com/assets/img/TrustedBy.svg) no-repeat !important; overflow: hidden !important;"></span><span class="ts-stars" aria-label="Rated {{reviewScore}} out of 5"><div style="width:{{starsPercent}}px !important; overflow: hidden !important;"><span></span></div></span>&nbsp;<a class="ts-widgetLink" href="{{url}}" rel="{{rel}}" target="{{target}}" style="{{captionStyle}}">{{caption}}</a></div><!--reviewLink--></div>',
+            starbar20: '<div class="ts-starbar"><span class="ts-starlogo" style="width: 60px !important; height: 20px !important; background: url(https://wassets.trustist.com/assets/img/TrustedBy.svg) no-repeat !important; overflow: hidden !important;"></span><span class="ts-stars" aria-label="Rated {{reviewScore}} out of 5"><div style="width:{{starsPercent}}px !important; overflow: hidden !important;"><span></span></div></span>&nbsp;<a class="ts-widgetLink" href="{{url}}" rel="{{rel}}" target="{{target}}" style="{{captionStyle}}">{{caption}}</a></div><!--reviewLink--></div>',
+            starbar25: '<div class="ts-starbar"><span class="ts-starlogo" style="width: 75px !important; height: 25px !important; background: url(https://wassets.trustist.com/assets/img/TrustedBy.svg) no-repeat !important; overflow: hidden !important;"></span><span class="ts-stars" aria-label="Rated {{reviewScore}} out of 5"><div style="width:{{starsPercent}}px !important; overflow: hidden !important;"><span></span></div></span>&nbsp;<a class="ts-widgetLink" href="{{url}}" rel="{{rel}}" target="{{target}}" style="{{captionStyle}}">{{caption}}</a></div><!--reviewLink--></div>',
+            starbar50: '<div class="ts-starbar"><span class="ts-starlogo" style="width: 145px !important; height: 50px !important; background: url(https://wassets.trustist.com/assets/img/TrustedBy.svg) no-repeat !important; overflow: hidden !important;"></span><span class="ts-stars" aria-label="Rated {{reviewScore}} out of 5"><div style="width:{{starsPercent}}px !important; overflow: hidden !important;"><span></span></div></span>&nbsp;<a class="ts-widgetLink" href="{{url}}" rel="{{rel}}" target="{{target}}" style="{{captionStyle}}">{{caption}}</a></div><!--reviewLink--></div>',
+            starbarwhite10: '<div class="ts-starbar"><span class="ts-starlogo" style="width: 30px !important; height: 10px !important; background: url(https://wassets.trustist.com/assets/img/TrustedBy_White.svg) no-repeat !important; overflow: hidden !important;"></span><span class="ts-stars" aria-label="Rated {{reviewScore}} out of 5"><div style="width:{{starsPercent}}px !important; overflow: hidden !important;"><span></span></div></span>&nbsp;<a class="ts-widgetLink" href="{{url}}" rel="{{rel}}" target="{{target}}" style="{{captionStyle}}">{{caption}}</a></div><!--reviewLink--></div>',
+            starbarwhite12: '<div class="ts-starbar"><span class="ts-starlogo" style="width: 35px !important; height: 12px !important; background: url(https://wassets.trustist.com/assets/img/TrustedBy_White.svg) no-repeat !important; overflow: hidden !important;"></span><span class="ts-stars" aria-label="Rated {{reviewScore}} out of 5"><div style="width:{{starsPercent}}px !important; overflow: hidden !important;"><span></span></div></span>&nbsp;<a class="ts-widgetLink" href="{{url}}" rel="{{rel}}" target="{{target}}" style="{{captionStyle}}">{{caption}}</a></div><!--reviewLink--></div>',
+            starbarwhite20: '<div class="ts-starbar"><span class="ts-starlogo" style="width: 60px !important; height: 20px !important; background: url(https://wassets.trustist.com/assets/img/TrustedBy_White.svg) no-repeat !important; overflow: hidden !important;"></span><span class="ts-stars" aria-label="Rated {{reviewScore}} out of 5"><div style="width:{{starsPercent}}px !important; overflow: hidden !important;"><span></span></div></span>&nbsp;<a class="ts-widgetLink" href="{{url}}" rel="{{rel}}" target="{{target}}" style="{{captionStyle}}">{{caption}}</a></div><!--reviewLink--></div>',
+            starbarwhite25: '<div class="ts-starbar"><span class="ts-starlogo" style="width: 75px !important; height: 25px !important; background: url(https://wassets.trustist.com/assets/img/TrustedBy_White.svg) no-repeat !important; overflow: hidden !important;"></span><span class="ts-stars" aria-label="Rated {{reviewScore}} out of 5"><div style="width:{{starsPercent}}px !important; overflow: hidden !important;"><span></span></div></span>&nbsp;<a class="ts-widgetLink" href="{{url}}" rel="{{rel}}" target="{{target}}" style="{{captionStyle}}">{{caption}}</a></div><!--reviewLink--></div>',
+            starbarwhite50: '<div class="ts-starbar"><span class="ts-starlogo" style="width: 145px !important; height: 50px !important; background: url(https://wassets.trustist.com/assets/img/TrustedBy_White.svg) no-repeat !important; overflow: hidden !important;"></span><span class="ts-stars" aria-label="Rated {{reviewScore}} out of 5"><div style="width:{{starsPercent}}px !important; overflow: hidden !important;"><span></span></div></span>&nbsp;<a class="ts-widgetLink" href="{{url}}" rel="{{rel}}" target="{{target}}" style="{{captionStyle}}">{{caption}}</a></div><!--reviewLink--></div>',
+        };
+
+        var contents = {
+            summary: '<a href="{{url}}" class="ts-widgetLink" rel="{{rel}}" target="{{target}}"><div class="ts-widgetScore" style="{{widgetScoreStyle}}"><span class="ts-widgetScoreBig">{{reviewScore}}</span> / 5.0</div> \
+                    <span class="ts-stars"><div style="width:{{starsPercent}}px !important; overflow: hidden !important;"><span></span></div></span></a><a class="ts-widgetLinkReviewer" href="{{url}}" rel="{{rel}}" target="{{target}}" style="{{viewLinkStyle}}">{{reviewCount}} {{reviewText}}</a>',
+            summaryBig: '<a href="{{url}}" class="ts-widgetLink" rel="{{rel}}" target="{{target}}"><div class="ts-widgetScore" style="{{widgetScoreStyle}}"><span class="ts-widgetScoreBig">{{reviewScore}}</span> / 5.0</div></a><a class="ts-widgetLinkReviewer" href="{{url}}" rel="{{rel}}" target="{{target}}" style="{{viewLinkStyle}}">{{reviewCount}} {{reviewText}}</a>'
+        };
+
+        var reviewTemplate = '<div class="ts-widgetReviewPanel" style="{{reviewLinkDivStyle}}"><a target="{{target}}" class="ts-widgetReviewLink" style="{{reviewLinkStyle}}" href="{{reviewLink}}" rel="nofollow">{{leaveReviewText}}</a></div>';
+
+        function start(f) { /in/.test(document.readyState) ? setTimeout(start, 5, f) : f(); }
+
+        // add tags
+        tsAddCssTag("https://wassets.trustist.com/assets/css/cleanslate.css");
+        tsAddCssTag("https://wassets.trustist.com/assets/css/reviewer.css");
+
+        start(function () {
+            // iterate over all widgets on the page and render
+            var divs = document.querySelectorAll("[ts-widget],div.ts-widget");
+            if (divs.length >= 0) {
+                for (var i = 0; i < divs.length; i++) {
+                    tsDisplayWidget(divs[i], businessKey, locationKey, tenantKey);
+                }
+            }
+            else {
+            }
+        });
+
+        function tsDisplayWidget(target, businessKey, locationKey, tenantKey) {
+            // get options before cleanslate
+            var options = tsReadAttributes(target);
+
+            // see if the widget requested a different location
+            var lkey = options.locationKey || locationKey;
+            var bkey = options.businessKey || businessKey;
+            var tkey = options.tenantKey || tenantKey;
+
+            //todo: tenants unable to place reviews
+            if (tkey !== "") {
+                options.suppressReviewLink = true;
+            }
+
+            if (lkey === locationKey && bkey === businessKey) {
+                tsDrawWidget(target, options);
+            } else {
+                // IE6 and below will not work
+                var xhr = new XMLHttpRequest();
+                var url = "https://widget.trustist.com/widgetdata?";
+                if (typeof tkey !== "undefined" && tkey !== "") url += "tenantKey=" + tkey;
+                if (typeof bkey !== "undefined" && bkey !== "") url += "businessKey=" + bkey;
+                if (typeof lkey !== "undefined" && lkey !== "") url += "&locationKey=" + lkey;
+                xhr.open("GET", url);
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        tsDrawWidget(target, options);
+                    }
+                };
+                xhr.send();
+            }
+        }
+
+        function tsDrawWidget(target, options) {
+            var widgetStyle = "";
+            var viewLinkStyle = "";
+            var reviewLinkStyle = "";
+            var reviewLinkDivStyle = "";
+            var widgetScoreStyle = "";
+            var logoStyle = "";
+            var rel = "noopener";
+            var templateDef = templateDefs.find(function (def) { return def.name === options.templateName; });
+            var template = templates[templateDef.template];
+            var content = contents[templateDef.content];
+            var reviewLinkTemplate = "";
+
+            if (templateDef.css !== "") {
+                tsAddCssTag(templateDef.css);
+            }
+
+            if (options.noFollow === false) {
+                rel = "nofollow";
+            }
+
+            if (templateDef.reviewLink === true && options.suppressReviewLink === false) {
+                if (options.reviewLinks === "all" && true) {
+                    var reviewSources = [{"name":"Trustist","description":null,"url":"https://www.trustistreviewer.com/survey/c34033c7-78a6-4cdc-b6c2-1fcee2024fd6.html?mode=review","id":"9a9b0d66-e568-474d-939b-f1859a3769d9"}];
+                    if (reviewSources.length > 1) {
+                        reviewLinkTemplate = '<div style="margin: 10px auto 0 auto !important; text-align: center !important; {{reviewLinkStyle}}">LEAVE A REVIEW ON</div><div class="ts-review-sources">';
+                        for (var i = 0; i < reviewSources.length; i++) {
+                            var link = reviewSources[i];
+                            var altText = "Leave a review for Odyssey Test Prep on " + link.name;
+                            if (link.description) {
+                                altText += " - " + link.description;
+                            }
+                            reviewLinkTemplate += '<div class="ts-review-sources-link"><a href="' + link.value + '" target="{{target}}"><img src="' +
+                                "https://trustist.blob.core.windows.net/reviewsourceicons/" + link.id + '.png" alt="' + altText + '" title="' + altText + '"></a></div>';
+                        }
+                        reviewLinkTemplate += "</div>";
+                    } else {
+                        reviewLinkTemplate = reviewTemplate;
+                    }
+                }
+                else {
+                    reviewLinkTemplate = reviewTemplate;
+                }
+            }
+
+            if (typeof options.logoUrl !== "undefined" && options.logoUrl !== null && options.logoUrl !== "") {
+                logoStyle = "background-image: url(" + options.logoUrl + ") !important;";
+            }
+
+            var captionStyle = "";
+            captionStyle = tsAddStyle(options.captionColour, "color", captionStyle);
+
+            template = template
+                .replace("{{content}}", content)
+                .replace("{{caption}}", options.caption)
+                .replace("{{captionStyle}}", captionStyle);
+
+            widgetStyle = tsAddStyle(options.borderRadius, "border-radius", widgetStyle);
+            widgetStyle = tsAddStyle(options.borderWidth, "border-width", widgetStyle);
+            widgetScoreStyle = tsAddStyle(options.colour, "color", widgetScoreStyle);
+            viewLinkStyle = tsAddStyle(options.viewLinkColour, "color", viewLinkStyle);
+            reviewLinkStyle = tsAddStyle(options.reviewLinkColour, "color", reviewLinkStyle);
+            reviewLinkStyle = tsAddStyle(options.reviewLinkFontFamily, "font-family", reviewLinkStyle);
+            reviewLinkStyle = tsAddStyle(options.reviewLinkFontSize, "font-size", reviewLinkStyle);
+            reviewLinkDivStyle = tsAddStyle(options.reviewLinkBackgroundColour, "background-color", reviewLinkDivStyle);
+            reviewLinkDivStyle = tsAddStyle(options.reviewLinkBorderRadius, "border-radius", reviewLinkDivStyle);
+            reviewLinkDivStyle = tsAddStyle(options.reviewLinkMarginTop, "margin-top", reviewLinkDivStyle);
+
+            target.innerHTML = template
+                .replace("<!--reviewLink-->", reviewLinkTemplate)
+                .replace("<!--logo-->", options.suppressLogo ? "" : logo)
+                .replace(new RegExp("{{url}}", "g"), options.reviewPageUrl || "https://www.trustist.com/local-reviews/Website-Review-odyssey-lsat-prep-reviews-3855.html")
+                .replace(new RegExp("{{reviewScore}}", "g"), "5.0")
+                .replace(new RegExp("{{reviewCount}}", "g"), "276")
+                .replace(new RegExp("{{reviewLink}}", "g"), reviewLink)
+                .replace("{{widgetStyle}}", widgetStyle)
+                .replace("{{viewLinkStyle}}", viewLinkStyle)
+                .replace("{{reviewLinkStyle}}", reviewLinkStyle)
+                .replace("{{reviewLinkDivStyle}}", reviewLinkDivStyle)
+                .replace("{{widgetScoreStyle}}", widgetScoreStyle)
+                .replace("{{starsPercent}}", (templateDef.starsWidth * 5.0 / 5).toFixed(0))
+                .replace("{{reviewText}}", tsGetCustomerReviewText(options.language))
+                .replace("{{leaveReviewText}}", tsGetLeaveReviewText(options))
+                .replace("{{logoStyle}}", logoStyle)
+                .replace(new RegExp("{{rel}}", "g"), rel)
+                .replace(new RegExp("{{target}}", "g"), options.target);
+            }
+
+        function tsGetCustomerReviewText(lang) {
+            if (lang === "fr") {
+                return "Avis des clients";
+            } else if (lang === "de") {
+                return "Kundenbewertungen";
+            } else if (lang === "ro") {
+                return "Recenzii ale clientilor";
+            } else if (lang === "it") {
+                return "recensioni dei clienti";
+            } else if (lang === "gr") {
+                return "Κριτικές Πελατών";
+            }
+            return "Customer Reviews";
+        }
+
+        function tsGetLeaveReviewText(options) {
+            if (options.language === "fr") {
+                return "LIRE UN EXAMEN";
+            } else if (options.language === "de") {
+                return "EINE REZENSION SCHREIBEN";
+            } else if (options.language === "ro") {
+                return "REEXAMINARE LASATI";
+            } else if (options.language === "it") {
+                return "Lascia una recensione";
+            } else if (options.language === "gr") {
+                return "Αφήσετε μια κριτική";
+            }
+            return options.reviewLinkText;
+        }
+
+        function tsAddStyle(optionProperty, styleName, compiledStyle) {
+            if (typeof optionProperty !== "undefined" && optionProperty !== null) {
+                compiledStyle += styleName + ": " + optionProperty + " !important; ";
+            }
+            return compiledStyle;
+        }
+
+        function tsReadAttributes(target) {
+            return {
+                templateName: target.getAttribute("ts-widget") || "widget",
+                suppressReviewLink: target.getAttribute("ts-suppress-review-link") || false,
+                suppressLogo: target.getAttribute("ts-suppress-logo") || false,
+                colour: target.getAttribute("ts-colour") || "#e7711b",
+                reviewLinkFontSize: target.getAttribute("ts-review-link-font-size") || "16px",
+                reviewLinkFontFamily: target.getAttribute("ts-review-link-font-family") || "Arial, sans-serif",
+                reviewLinkColour: target.getAttribute("ts-review-link-colour") || target.getAttribute("ts-colour") || "#e7711b",
+                reviewLinkDecoration: target.getAttribute("ts-review-link-decoration"),
+                reviewLinkBackgroundColour: target.getAttribute("ts-review-link-background-colour"),
+                reviewLinkBorderRadius: target.getAttribute("ts-review-link-border-radius"),
+                reviewLinkMarginTop: target.getAttribute("ts-review-link-margin-top"),
+                reviewLinkText: target.getAttribute("ts-review-link-text") || "LEAVE A REVIEW",
+                captionColour: target.getAttribute("ts-caption-colour") || "auto",
+                noFollow: target.getAttribute("ts-nofollow") || true,
+                borderRadius: target.getAttribute("ts-border-radius"),
+                borderWidth: target.getAttribute("ts-border-width") || "1px",
+                locationKey: target.getAttribute("ts-location"),
+                businessKey: target.getAttribute("ts-business"),
+                language: target.getAttribute("ts-language"),
+                viewLinkColour: target.getAttribute("ts-view-link-colour") || target.getAttribute("ts-colour") || "#e7711b",
+                logoUrl: target.getAttribute("ts-logo-url"),
+                reviewPageUrl: target.getAttribute("ts-reviews-url"),
+                reviewLinks: target.getAttribute("ts-review-links"),
+                caption: target.getAttribute("ts-caption") || "Rating: {{reviewScore}} - ‎{{reviewCount}} reviews",
+                target: target.getAttribute("ts-target") || "_blank",
+            };
+        }
+
+        function tsAddCssTag(url) {
+            var includedAlready = tsCheckIfIncluded(url);
+            var head = d.getElementsByTagName("head")[0];
+
+            if (!includedAlready) {
+                var tag = d.createElement("link");
+                tag.rel = "stylesheet";
+                tag.type = "text/css";
+                tag.href = url;
+                head.appendChild(tag);
+            }
+        }
+
+        function tsCheckIfIncluded(file) {
+            var links = d.getElementsByTagName("link");
+            for (var i = 0; i < links.length; i++) {
+                if (links[i].href?.substr(-file.length) === file)
+                    return true;
+            }
+
+            var scripts = d.getElementsByTagName("script");
+            for (var j = 0; j < scripts.length; j++) {
+                if (scripts[j].src?.substr(-file.length) === file)
+                    return true;
+            }
+
+            return false;
+        }
+    })(window, document);

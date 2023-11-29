@@ -1,0 +1,117 @@
+﻿div.ts-widget {
+	display: inline-block !important;
+}
+
+div.ts-widgetLogo {
+    display: inline-block !important;
+    height: 50px !important;
+    width: 110px !important;
+    background: url(../img/TrustedBy.svg) no-repeat !important;
+    background-position: center !important;
+}
+
+div.ts-widgetBody {
+    text-align: center !important;
+    line-height: 18px !important;
+    font-family: Arial, sans-serif !important;
+    padding: 4px !important;
+    border: 1px solid gray !important;
+    min-width: 110px !important;
+    background-color: white !important;
+    display: table !important;
+    margin: auto !important;
+}
+
+div.ts-widgetContent {
+    display: inline-block !important;
+    padding: 6px 10px !important;
+}
+
+div.ts-widgetAdvert {
+    font-size: 14px !important;
+    color: #e7711b !important;
+    font-weight: bold !important;
+}
+
+a.ts-widgetLink {
+    display: inline-block !important;
+    text-decoration: none !important;
+}
+
+div.ts-widgetScore {
+    font-size: 20px !important;
+    margin-bottom: 5px !important;
+    color: #e7711b !important;
+    white-space: nowrap !important;
+}
+
+span.ts-widgetScoreBig {
+    font-size: 26px !important;
+}
+
+a.ts-widgetLinkReviewer {
+    font-size: 9px !important;
+    text-decoration: none !important;
+    display: block !important;
+    text-align: center !important;
+    width: 100% !important;
+}
+
+div.ts-widgetReviewPanel {
+    font-family: Arial, sans-serif !important;
+	min-width: 112px !important;
+    text-align: center !important;
+	padding: 5px 0 !important;
+}
+
+a.ts-widgetReviewLink {
+	display: inline-block !important;
+	line-height: 22px !important;
+    color: blue !important;
+    text-decoration: none !important;
+}
+
+div.ts-starbar {
+    color: #808080 !important;
+    display: block !important;
+    line-height: 18px !important;
+    font-size: small !important;
+    font-family: arial,sans-serif !important;
+    font-weight: normal !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+}
+
+span.ts-starlogo {
+    display: inline-block !important;    
+}
+
+span.ts-stars {    
+    background: url(../img/stars/stars_off.svg) no-repeat !important;
+    display: inline-block !important;
+    height: 13px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    top: 1px !important;
+    width: 64px !important;
+}
+
+    span.ts-stars span {
+        background: url(../img/stars/stars_on.svg) no-repeat !important;
+        display: block !important;
+        height: 13px !important;
+        width: 64px !important;
+    }
+
+div.ts-review-sources {
+    display: flex !important;
+    flex-wrap: wrap !important;
+}
+
+div.ts-review-sources-link {
+    flex-grow: 1 !important;
+    width: 20% !important;
+    margin-top: 10px !important;
+    text-align: center !important;
+}
